@@ -13,6 +13,8 @@ You may need to import the got package with npm
 
 Usage: node TelloConsole.js
 
+You should first connect the computer where you are running node.js to the Tello wireless network for your Tello.
+
 List of available keyboard commands is printed.
 
 The first command to execute is c for command mode.
