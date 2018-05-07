@@ -19,11 +19,13 @@ List of available keyboard commands is printed.
 
 The first command to execute is c for command mode.
 
+The land command will be executed when the space bar is pressed.
+
 To quit the program, enter ctrl-c
 
 See the Tello SDK documentation for explanation of the commands.
 
-The commands that need a numeric parameter have a fixed value the is used when the command is sent to the Tello. This behavior may be improved in future versions of the file. Only the Flip forward version of the Flip command is currently supported.
+The commands that need a numeric parameter have a fixed value that is used when the command is sent to the Tello. This behavior may be improved in future versions of the TelloConsole.js file. Only the Flip forward version of the Flip command is currently supported.
 
 This is just a getting started version of the program.
 
