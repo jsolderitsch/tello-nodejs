@@ -31,7 +31,7 @@ This is just a getting started version of the program.
 
 Extensions and improvements encouraged.
 
-A new full command line node.js is also available. Any SDK command can be entered just like for the Tello3.py file distributed by DJI/Ryze for the Tello SDK.
+A new full command line script is also available. Any SDK command can be entered just like for the Tello3.py file distributed by DJI/Ryze for the Tello SDK.
 
 Usage: node TelloCommandLine.js
 
