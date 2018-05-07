@@ -36,3 +36,5 @@ A new full command line script is also available. Any SDK command can be entered
 Usage: node TelloCommandLine.js
 
 As an added bonus, the readline feature used here has command history so that the up and down arrow keys can be used to find and then re-execute commands in the current session.
+
+A nice next step would be to add game controller support. node.js seems to support PS3 and PS4 controller types.
