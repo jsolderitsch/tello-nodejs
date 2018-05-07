@@ -37,4 +37,6 @@ Usage: node TelloCommandLine.js
 
 As an added bonus, the readline feature used here has command history so that the up and down arrow keys can be used to find and then re-execute commands in the current session.
 
+A video demo is available at: https://www.youtube.com/watch?v=BNNRNsa2a3o
+
 A nice next step would be to add game controller support. node.js seems to support PS3 and PS4 controller types.
