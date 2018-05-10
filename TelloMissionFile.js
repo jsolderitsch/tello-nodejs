@@ -121,7 +121,7 @@ rl.on('line', (input) => {
   fileName = input.trim();
   switch(fileName) {
     case 'quit':
-    case 'Quit'':
+    case 'Quit':
 	  rl.close();
       break;
     default:
