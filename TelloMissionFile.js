@@ -15,7 +15,6 @@ const readline = require('readline'),
   prefix = 'Tello Mission> ';
 
 
-//const readline = require('readline');
 const trimNewlines = require('trim-newlines');
 const fs = require('fs')
 const commandErr = new Error('Tello Command Error');
@@ -24,9 +23,6 @@ const PORT = 8889;
 const HOST = '192.168.10.1';
 
 var dgram = require('dgram');
-//const client = dgram.createSocket('udp4');
-
-//client.bind(8001);
 
 function telloMessage (message) {
     return new Promise(resolve => {
