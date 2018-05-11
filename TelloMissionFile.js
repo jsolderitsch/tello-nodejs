@@ -22,6 +22,26 @@ const commandErr = new Error('Tello Command Error');
 const PORT = 8889;
 const HOST = '192.168.10.1';
 
+var commandDelays = new Map([
+  ['command', 500],
+  ['takeoff', 5000],
+  ['land', 5000],
+  ['up', 7000],
+  ['down', 7000],
+  ['left', 5000],
+  ['go', 7000],
+  ['right', 5000],
+  ['forward', 5000],
+  ['back', 5000],
+  ['cw', 5000],
+  ['ccw', 5000],
+  ['flip', 3000],
+  ['speed', 3000],
+  ['battery?', 500],
+  ['speed?', 500],
+  ['time?', 500]
+]);
+
 var dgram = require('dgram');
 
 function telloMessage (message) {
@@ -105,14 +125,20 @@ function doMission (filename) {
 
 	console.log(commands);
 
-	var delay;
+	var delay, commandCode, commandTimeEst;
 	delay = 0;
+	commandCode = commands[0].split(' ',1)[0];
+	commandTimeEst = commandDelays.get(commandCode);
+	console.log('First Delay ', commandTimeEst);
 	doTelloCommandWithRetry (commands[0]);
 	for (let i = 1, len = commands.length; i < len; i++) {
-	   delay = delay + 5000;
+	   delay = delay + commandTimeEst;
 	   setTimeout(doTelloCommandWithRetry,delay,commands[i]);
+	   commandCode = commands[i].split(' ',1)[0];
+	   commandTimeEst = commandDelays.get(commandCode);
+	   console.log('Estimated Delay ', delay);
 	}
-    promptAfterDelay(delay + 5000); //give time for last command to finish
+    promptAfterDelay(delay + commandTimeEst); //give time for last command to finish
 }
 
 //doMission ('./telloNoFly.txt');
