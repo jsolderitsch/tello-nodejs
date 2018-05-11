@@ -1,0 +1,4 @@
+command
+battery?
+speed?
+time?
