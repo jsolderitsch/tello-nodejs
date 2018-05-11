@@ -129,7 +129,6 @@ function doMission (filename) {
 	delay = 0;
 	commandCode = commands[0].split(' ',1)[0];
 	commandTimeEst = commandDelays.get(commandCode);
-	console.log('First Delay ', commandTimeEst);
 	doTelloCommandWithRetry (commands[0]);
 	for (let i = 1, len = commands.length; i < len; i++) {
 	   delay = delay + commandTimeEst;
