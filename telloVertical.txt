@@ -3,6 +3,6 @@ battery?
 takeoff
 down 60
 cw 90
-up 60
-ccw 90
+up 100
+flip 
 land
