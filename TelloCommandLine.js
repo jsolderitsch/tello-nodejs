@@ -23,10 +23,10 @@ const client = dgram.createSocket('udp4');
 
 client.bind(8001);
 
-client.on('message', (msg,info) => {
-	console.log('Data received from server : ' + msg.toString());
-	rl.prompt();
-});								
+client.on('message', (msg, info) => {
+  console.log('Data received from server : ' + msg.toString());
+  rl.prompt();
+});
 
 
 console.log('---------------------------------------');
@@ -35,19 +35,19 @@ console.log('---------------------------------------');
 
 rl.on('line', (input) => {
   commandStr = input.trim();
-  switch(commandStr) {
+  switch (commandStr) {
     case 'quit':
-	  client.close();
-	  rl.close();
+      client.close();
+      rl.close();
       break;
     default:
       console.log(`Command: ${commandStr}`);
-      client.send(commandStr, 0, commandStr.length, PORT, HOST, function(err, bytes) {
-		  if (err) throw err;
-		});
+      client.send(commandStr, 0, commandStr.length, PORT, HOST, function (err, bytes) {
+        if (err) throw err;
+      });
       break;
   }
-}).on('close', function() {
+}).on('close', function () {
   console.log('Exiting Command Line Processor');
   process.exit(0);
 });
